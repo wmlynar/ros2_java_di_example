@@ -19,7 +19,41 @@
 		<dependency>
 			<groupId>org.ros2.java</groupId>
 			<artifactId>std_msgs_messages</artifactId>
-			<version>0.0.20190222-SNAPSHOT</version>
+			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 	</dependencies>
+        <build>
+                <plugins>
+                        <plugin>
+                                <artifactId>maven-assembly-plugin</artifactId>
+                                <configuration>
+                                        <archive>
+                                                <manifest>
+                                                        <mainClass>
+                                                                org.ros2.java.di.example.ExamplePublisher
+                                                        </mainClass>
+                                                </manifest>
+                                        </archive>
+                                        <descriptorRefs>
+                                                <descriptorRef>jar-with-dependencies</descriptorRef>
+                                        </descriptorRefs>
+                                </configuration>
+                                <executions>
+                                        <execution>
+                                                <id>make-assembly</id>
+                                                <phase>package</phase>
+                                                <goals>
+                                                        <goal>single</goal>
+                                                </goals>
+                                        </execution>
+                                </executions>
+                        </plugin>
+                </plugins>
+        </build>
+        <repositories>
+                <repository>
+                        <id>ros2_java_maven_repo</id>
+                        <url>https://raw.github.com/wmlynar/ros2_java_maven_repo/master/</url>
+                </repository>
+        </repositories>
 </project>
