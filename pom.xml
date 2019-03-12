@@ -30,7 +30,7 @@
                                         <archive>
                                                 <manifest>
                                                         <mainClass>
-                                                                org.ros2.java.di.example.ExamplePublisher
+                                                                org.ros2.java.di.example.Main
                                                         </mainClass>
                                                 </manifest>
                                         </archive>
